@@ -1,6 +1,6 @@
 <?php
+require_once 'Calculadora.php';
 
-// Clase extendida
 class CalculadoraCientifica extends Calculadora {
     
     // Calcula la potencia (base elevado al exponente)
@@ -28,23 +28,3 @@ class CalculadoraCientifica extends Calculadora {
         return pow($numero, 1 / $indice);
     }
 }
-
-// --- EJEMPLO DE USO ---
-
-try {
-    // Instanciamos únicamente la Calculadora Científica
-    $calc = new CalculadoraCientifica();
-
-    // Uso de métodos heredados de la clase Calculadora
-    echo "Suma (10 + 5): " . $calc->sumar(10, 5) . "\n";
-    echo "División (20 / 4): " . $calc->dividir(20, 4) . "\n";
-
-    // Uso de los nuevos métodos de CalculadoraCientifica
-    echo "Potencia (2 elevado a 3): " . $calc->potencia(2, 3) . "\n";
-    echo "Raíz cuadrada de 81: " . $calc->raizCuadrada(81) . "\n";
-    echo "Raíz cúbica de 27: " . $calc->raizEnesima(27, 3) . "\n";
-
-} catch (Exception $e) {
-    echo $e->getMessage();
-}
-//
